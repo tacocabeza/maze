@@ -1,9 +1,9 @@
+#include "process.h"
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
 int main(int argc, char *argv[]) {
   printf("Hello World!\n");
 
@@ -36,6 +36,8 @@ int main(int argc, char *argv[]) {
     }
   }
   printf("verbose=%d; png path: %s\n", verbose, path);
+
+  read_png(path);
 
   exit(EXIT_SUCCESS);
 }

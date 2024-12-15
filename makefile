@@ -1,6 +1,8 @@
 CC = gcc
-CFLAGS = -g -Wall -Werror -Wextra
-OBJ = main.o
+INC_DIR = ./
+DEPS = $INC_DIR/process.h
+CFLAGS = -g -Wall -Werror -Wextra -I$(INC_DIR)
+OBJ = main.o process.o
 
 %.o: %.c
 	$(CC) -c -o $@ $< $(CFLAGS)
