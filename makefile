@@ -3,6 +3,7 @@ INC_DIR = ./
 DEPS = $INC_DIR/process.h
 CFLAGS = -g -Wall -Werror -Wextra -I$(INC_DIR)
 OBJ = main.o process.o
+BIN = main
 
 %.o: %.c
 	$(CC) -c -o $@ $< $(CFLAGS)
@@ -10,7 +11,9 @@ OBJ = main.o process.o
 main: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
 
+all: clean $(BIN)
+
 .PHONY: clean
 
 clean:
-	rm -f *.o
+	rm -f $(BIN) *.o
